@@ -12,5 +12,7 @@
     },
     "bsc-flags": [
       "-bs-super-errors"
-    ]
+    ],
+    "refmt": 3
   }
+  

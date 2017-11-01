@@ -1,9 +1,3 @@
-type esModule = Js.t {. default : ReasonReact.reactClass};
+[@bs.module "./App.js"] external reactClass : ReasonReact.reactClass = "default";
 
-external app : esModule = "./App.js" [@@bs.module];
-
-let make children =>  
-  ReasonReact.wrapJsForReason
-    props::(Js.Obj.empty ()) 
-    reactClass::app##default
-    children;
+let make = (children) => ReasonReact.wrapJsForReason(~props=Js.Obj.empty(), ~reactClass, children);
